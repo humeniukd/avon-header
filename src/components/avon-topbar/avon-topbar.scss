@@ -1,0 +1,18 @@
+:host {
+  display: block;
+  width: 100%;
+
+  .topbar {
+    position: relative;
+    z-index: 2;
+    max-width: 77.5rem;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 auto;
+
+    .rep {
+      display: flex;
+    }
+  }
+}

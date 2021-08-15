@@ -8,6 +8,14 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface AvonHeader {
     }
+    interface AvonTopbar {
+    }
+    interface CategoryNav {
+        "categories": any[];
+    }
+    interface DesktopMenu {
+        "data": any;
+    }
 }
 declare global {
     interface HTMLAvonHeaderElement extends Components.AvonHeader, HTMLStencilElement {
@@ -16,15 +24,47 @@ declare global {
         prototype: HTMLAvonHeaderElement;
         new (): HTMLAvonHeaderElement;
     };
+    interface HTMLAvonTopbarElement extends Components.AvonTopbar, HTMLStencilElement {
+    }
+    var HTMLAvonTopbarElement: {
+        prototype: HTMLAvonTopbarElement;
+        new (): HTMLAvonTopbarElement;
+    };
+    interface HTMLCategoryNavElement extends Components.CategoryNav, HTMLStencilElement {
+    }
+    var HTMLCategoryNavElement: {
+        prototype: HTMLCategoryNavElement;
+        new (): HTMLCategoryNavElement;
+    };
+    interface HTMLDesktopMenuElement extends Components.DesktopMenu, HTMLStencilElement {
+    }
+    var HTMLDesktopMenuElement: {
+        prototype: HTMLDesktopMenuElement;
+        new (): HTMLDesktopMenuElement;
+    };
     interface HTMLElementTagNameMap {
         "avon-header": HTMLAvonHeaderElement;
+        "avon-topbar": HTMLAvonTopbarElement;
+        "category-nav": HTMLCategoryNavElement;
+        "desktop-menu": HTMLDesktopMenuElement;
     }
 }
 declare namespace LocalJSX {
     interface AvonHeader {
     }
+    interface AvonTopbar {
+    }
+    interface CategoryNav {
+        "categories"?: any[];
+    }
+    interface DesktopMenu {
+        "data"?: any;
+    }
     interface IntrinsicElements {
         "avon-header": AvonHeader;
+        "avon-topbar": AvonTopbar;
+        "category-nav": CategoryNav;
+        "desktop-menu": DesktopMenu;
     }
 }
 export { LocalJSX as JSX };
@@ -32,6 +72,9 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "avon-header": LocalJSX.AvonHeader & JSXBase.HTMLAttributes<HTMLAvonHeaderElement>;
+            "avon-topbar": LocalJSX.AvonTopbar & JSXBase.HTMLAttributes<HTMLAvonTopbarElement>;
+            "category-nav": LocalJSX.CategoryNav & JSXBase.HTMLAttributes<HTMLCategoryNavElement>;
+            "desktop-menu": LocalJSX.DesktopMenu & JSXBase.HTMLAttributes<HTMLDesktopMenuElement>;
         }
     }
 }

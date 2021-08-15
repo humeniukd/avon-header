@@ -1,0 +1,155 @@
+:host {
+  display: block;
+
+  .header {
+    display: flex;
+    box-shadow: 1px 12px 15px -16px grey;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+
+    &__row {
+      padding: 0 20px;
+      height: 4rem;
+      display: flex;
+      justify-content: center;
+      position: relative
+    }
+
+    &__logo {
+      display: flex;
+      align-items: center
+    }
+
+    &__logoImage {
+      height: 2.125rem
+    }
+
+    &-actions {
+      display: flex;
+      flex: 100% 1;
+      align-items: center;
+      justify-content: flex-end
+    }
+  }
+
+
+  .wishlistHeader {
+    display: flex;
+    position: absolute;
+    font-size: 11px;
+    font-weight: 100;
+    color: $text-secondary;
+    font-family: $font-family;
+    right: 20px;
+    text-transform: uppercase;
+    z-index: 1
+  }
+
+  .searchBar {
+    display: block;
+    position: relative;
+    width: 20rem;
+    background: #fff;
+    border-radius: 1.5rem;
+    padding: 0 1rem;
+    margin-top: .5rem;
+    margin-right: 2.2rem;
+    border: 1px solid #ccc7c7;
+    height: 2rem;
+
+    &__input {
+      outline: none;
+      font-size: .9rem;
+      flex-grow: 1;
+      background: transparent;
+      text-align: left;
+      width: 100%;
+      height: 100%;
+      border: none
+    }
+
+    &__button {
+      top: .4em;
+      display: inline;
+      position: absolute;
+      right: .4em
+    }
+  }
+
+  .top_navigation_desk {
+    font-family: $font-family;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    margin-top: 20px;
+
+    .top-nav-link {
+      padding: 10px 20px;
+      font-size: 12px;
+      text-transform: uppercase;
+      color: $text-secondary;
+      font-weight: 100;
+      border-bottom: 1px solid #fff;
+
+      &:nth-child(3) {
+        color: $c-primary;
+        font-weight: bold
+      }
+
+      &:hover {
+        color: $c-primary;
+        border-bottom: 1px solid $c-primary
+      }
+    }
+  }
+
+  .button {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--button-padding, $spacer-sm);
+    color: var(--button-color, $c-white);
+    background: var(--button-background, $c-primary);
+    transition: background .8s;
+    background-position: 50%;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 0;
+    white-space: nowrap;
+    border-width: 0;
+
+    &-text {
+      --button-padding: 0;
+      --button-background: transparent;
+      --button-color: $c-text;
+      display: inline;
+    }
+
+    &-topbar {
+      padding: 0 10px;
+      font-size: .7em;
+      text-decoration: none;
+      display: inline;
+    }
+  }
+
+  .miniCart {
+    font-size: 13px;
+    font-weight: 100;
+    color: $c-primary;
+    font-family: $font-family;
+
+    .svg_bag {
+      width: 31px;
+      margin-right: 10px;
+      color: $c-primary;
+
+      .whiteFill {
+        fill: #fff
+      }
+    }
+  }
+}
