@@ -27,10 +27,7 @@ export const config: Config = {
   ],
   plugins: [
     sass({
-      injectGlobalPaths: [
-        'node_modules/avon-mfe-ui-kit/scss/variables.scss',
-        'node_modules/avon-mfe-ui-kit/scss/mixins.scss',
-      ]
+      includePaths: ['node_modules'],
     })
   ]
 };

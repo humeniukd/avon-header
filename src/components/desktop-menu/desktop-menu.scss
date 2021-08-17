@@ -1,3 +1,5 @@
+@import '~avon-mfe-ui-kit/scss/variables';
+
 :host {
   display: block;
 
@@ -60,7 +62,7 @@
       text-transform: uppercase;
       color: $text-secondary;
       font-weight: 100;
-      border-bottom: 1px solid #fff;
+      border-bottom: 1px solid $c-white;
 
       &:nth-child(3) {
         color: $c-primary;
@@ -117,7 +119,7 @@
       color: $c-primary;
 
       .whiteFill {
-        fill: #fff
+        fill: $c-white
       }
     }
   }

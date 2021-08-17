@@ -1,3 +1,5 @@
+@import '~avon-mfe-ui-kit/scss/variables';
+
 :host {
   display: block;
 
@@ -23,7 +25,7 @@
         cursor: pointer;
         font-size: 15px;
         font-weight: 100;
-        color: var(--text-secondary);
+        color: $text-secondary;
         position: relative;
         flex: 1;
         padding: 12px;
@@ -33,11 +35,11 @@
         border-bottom-color: transparent;
         text-align: center;
         list-style: none;
-        font-family: var(--font-family);
+        font-family: var(--font-family, $font-family);
         transition: 0.3s ease;
 
         &:hover {
-          border-bottom-color: var(--c-primary);
+          border-bottom-color: $c-primary;
           text-decoration: none;
         }
       }
