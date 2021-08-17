@@ -27,7 +27,8 @@ export class CategoryNav {
             onMouseOver={() => this.mouseOver(category.children, category.slug)}
             onMouseOut={() => this.hovered = false}
           >
-            <avon-link link={category.slug ? `/c/${category.slug}` : '#'} label={category.name}>
+            <avon-link link={category.slug ? `/c/${category.slug}` : '#'}>
+              <span slot="link_slot">{category.name}</span>
             </avon-link>
           </li>)
         )}
@@ -42,7 +43,7 @@ export class CategoryNav {
           <li class="heading">Categories</li>
           {this.childData.map(subCat => (
             <li key={subCat.id}>
-              <avon-link link="localePath(`/c${subCat.url}`)" label={subCat.name}></avon-link>
+              <avon-link link={`/c${subCat.url}`}><span slot="link_slot">{subCat.name}</span></avon-link>
             </li>
             )
           )}

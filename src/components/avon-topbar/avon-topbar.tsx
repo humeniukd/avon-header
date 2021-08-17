@@ -1,4 +1,4 @@
-import { Component, h } from '@stencil/core';
+import { Component, h, Prop } from '@stencil/core';
 
 @Component({
   tag: 'avon-topbar',
@@ -6,17 +6,18 @@ import { Component, h } from '@stencil/core';
   shadow: true,
 })
 export class AvonTopbar {
+  @Prop() settings = null
 
   render() {
     return (
       <div class="topbar">
         <div class="rep">
-          <avon-link link="/rep" label="FIND A REPRESENTATIVE" color="rgb(29, 31, 34)" fontsize=".7em"></avon-link>
-          &nbsp;|&nbsp;
-          <avon-link link="#" label="BECOME A REPRESENTATIVE" color="rgb(29, 31, 34)" fontsize=".7em"></avon-link>
+          <avon-link link="/rep" color="rgb(29, 31, 34)" fontsize=".7em"><span slot="link_slot">{this.settings.findRep}</span></avon-link>
+          <span>&nbsp;|&nbsp;</span>
+          <avon-link link="#" color="rgb(29, 31, 34)" fontsize=".7em"><span slot="link_slot">{this.settings.becomeRep}</span></avon-link>
         </div>
         <div>
-          <avon-link link="#" label="CUSTOMER LOGIN / REGISTRATION" color="rgb(29, 31, 34)" fontsize=".7em"></avon-link>
+          <avon-link link="#" color="rgb(29, 31, 34)" fontsize=".7em"><span slot="link_slot">{this.settings.loginText}</span></avon-link>
         </div>
       </div>
     );

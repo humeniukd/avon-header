@@ -7,14 +7,24 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface AvonHeader {
+        "country": string;
+        "locale": string;
     }
     interface AvonTopbar {
+        "settings": any;
     }
     interface CategoryNav {
         "categories": any[];
     }
     interface DesktopMenu {
         "data": any;
+        "settings": any;
+    }
+    interface MobileMenu {
+        "categoryList": any[];
+        "settings": any;
+    }
+    interface SearchBar {
     }
 }
 declare global {
@@ -42,29 +52,55 @@ declare global {
         prototype: HTMLDesktopMenuElement;
         new (): HTMLDesktopMenuElement;
     };
+    interface HTMLMobileMenuElement extends Components.MobileMenu, HTMLStencilElement {
+    }
+    var HTMLMobileMenuElement: {
+        prototype: HTMLMobileMenuElement;
+        new (): HTMLMobileMenuElement;
+    };
+    interface HTMLSearchBarElement extends Components.SearchBar, HTMLStencilElement {
+    }
+    var HTMLSearchBarElement: {
+        prototype: HTMLSearchBarElement;
+        new (): HTMLSearchBarElement;
+    };
     interface HTMLElementTagNameMap {
         "avon-header": HTMLAvonHeaderElement;
         "avon-topbar": HTMLAvonTopbarElement;
         "category-nav": HTMLCategoryNavElement;
         "desktop-menu": HTMLDesktopMenuElement;
+        "mobile-menu": HTMLMobileMenuElement;
+        "search-bar": HTMLSearchBarElement;
     }
 }
 declare namespace LocalJSX {
     interface AvonHeader {
+        "country"?: string;
+        "locale"?: string;
     }
     interface AvonTopbar {
+        "settings"?: any;
     }
     interface CategoryNav {
         "categories"?: any[];
     }
     interface DesktopMenu {
         "data"?: any;
+        "settings"?: any;
+    }
+    interface MobileMenu {
+        "categoryList"?: any[];
+        "settings"?: any;
+    }
+    interface SearchBar {
     }
     interface IntrinsicElements {
         "avon-header": AvonHeader;
         "avon-topbar": AvonTopbar;
         "category-nav": CategoryNav;
         "desktop-menu": DesktopMenu;
+        "mobile-menu": MobileMenu;
+        "search-bar": SearchBar;
     }
 }
 export { LocalJSX as JSX };
@@ -75,6 +111,8 @@ declare module "@stencil/core" {
             "avon-topbar": LocalJSX.AvonTopbar & JSXBase.HTMLAttributes<HTMLAvonTopbarElement>;
             "category-nav": LocalJSX.CategoryNav & JSXBase.HTMLAttributes<HTMLCategoryNavElement>;
             "desktop-menu": LocalJSX.DesktopMenu & JSXBase.HTMLAttributes<HTMLDesktopMenuElement>;
+            "mobile-menu": LocalJSX.MobileMenu & JSXBase.HTMLAttributes<HTMLMobileMenuElement>;
+            "search-bar": LocalJSX.SearchBar & JSXBase.HTMLAttributes<HTMLSearchBarElement>;
         }
     }
 }

@@ -10,4 +10,15 @@
     justify-content: center;
     background-color: $c-light;
   }
+
+  .smartphone-only {
+    @include for-desktop {
+      display: none !important;
+    }
+  }
+  .desktop-only {
+    @include for-mobile {
+      display: none !important;
+    }
+  }
 }

@@ -2,6 +2,9 @@ import { Config } from '@stencil/core';
 import { sass } from '@stencil/sass';
 
 export const config: Config = {
+  env: {
+    settingsApi: 'http://54.72.110.252:31477/.rest/delivery/'
+  },
   namespace: 'avon-header',
   outputTargets: [
     {
@@ -15,6 +18,9 @@ export const config: Config = {
       type: 'docs-readme',
     },
     {
+      type: 'dist-hydrate-script'
+    },
+    {
       type: 'www',
       serviceWorker: null, // disable service workers
     },
@@ -23,6 +29,7 @@ export const config: Config = {
     sass({
       injectGlobalPaths: [
         'node_modules/avon-mfe-ui-kit/scss/variables.scss',
+        'node_modules/avon-mfe-ui-kit/scss/mixins.scss',
       ]
     })
   ]

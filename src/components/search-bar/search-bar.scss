@@ -1,0 +1,49 @@
+:host {
+  display: block;
+
+  .searchBar {
+    display: block;
+    position: relative;
+    background: #fff;
+    border-radius: 1.5rem;
+    padding: 0 1rem;
+    margin-top: .5rem;
+    margin-right: 2.2rem;
+    margin-left: 2.2rem;
+    border: 1px solid #ccc7c7;
+    height: 2rem;
+
+    @include for-desktop {
+      width: 20rem;
+      margin-left: 0;
+    }
+
+    &__input {
+      outline: none;
+      font-size: .9rem;
+      flex-grow: 1;
+      background: transparent;
+      text-align: left;
+      width: 100%;
+      height: 100%;
+      border: none
+    }
+
+    &__button {
+      padding: 0;
+      color: $c-text;
+      background: transparent;
+      transition: background .8s;
+      background-position: 50%;
+      text-decoration: none;
+      cursor: pointer;
+      border-radius: 0;
+      white-space: nowrap;
+      border-width: 0;
+      top: .4em;
+      display: inline;
+      position: absolute;
+      right: .4em
+    }
+  }
+}
